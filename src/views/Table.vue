@@ -1,17 +1,31 @@
 <template>
-<div>
-  <a>F--K</a>
-  <HelloWorld/>
-</div>
+  <div>
+    <v-table :users_data="USERS" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld";
+import {mapActions, mapGetters} from 'vuex';
+import VTable from "@/components/table/v-table";
+
 
 export default {
-name: "EditTable",
+  name: "Table",
   components: {
-  HelloWorld
+    VTable
+  },
+  computed:{
+    ...mapGetters([
+      'USERS'
+    ])
+  },
+  methods:{
+    ...mapActions([
+      'GET_USERS_FROM_API'
+    ])
+  },
+   mounted(){
+    this.GET_USERS_FROM_API()
   }
 }
 </script>

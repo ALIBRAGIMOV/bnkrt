@@ -1,13 +1,17 @@
 <template>
-$END$
+  <el-button><router-link to="/"><a>Отмена</a></router-link>
+  </el-button>
 </template>
 
 <script>
 export default {
-name: "CancelButton"
+  name: "CancelButton"
 }
 </script>
 
-<style scoped>
-
+<style>
+a{
+  text-decoration: none;
+  color: cadetblue;
+}
 </style>

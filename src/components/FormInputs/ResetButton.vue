@@ -1,13 +1,14 @@
 <template>
-$END$
+  <el-button type="warning" @click="reset" plain>Сброс</el-button>
 </template>
 
 <script>
 export default {
-name: "ResetButton"
+  name: "ResetButton",
+  methods: {
+    reset() {
+      this.$store.commit('reset');
+    }
+  }
 }
 </script>
-
-<style scoped>
-
-</style>
